@@ -5,6 +5,10 @@ import { deleteData } from "./delete";
 import { createData } from "./create";
 import { relationalQueries } from "./relationslQuries";
 import { loggingInPrisma } from "./logging";
+import { initializeDB } from "./initializeDB";
+import { aggregate } from "./aggregate";
+import { transaction } from "./transaction";
+import { rawQuery } from "./rawQuery";
 
 export const prisma = new PrismaClient({
     log: [
@@ -19,12 +23,16 @@ prisma.$on("query", (e) => {
 });
 
 const main = async () => {
+    // initializeDB();
     // createData();
     // find();
     // update();
     // deleteData();
     // relationalQueries();
-    loggingInPrisma();
+    // loggingInPrisma();
+    // aggregate();
+    // transaction();
+    rawQuery();
 };
 
 main();
